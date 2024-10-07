@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "more-slabs",
+	"version": "${version}",
+	"name": "More Slabs",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"gepbird"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/more-slabs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.gepbird.moreslabs.MoreSlabs",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.gepbird.moreslabs.MoreSlabsClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "com.gepbird.moreslabs.MoreSlabsDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"more-slabs.mixins.json",
+		{
+			"config": "more-slabs.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
